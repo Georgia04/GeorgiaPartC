@@ -76,5 +76,43 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Unit 5\" />
+    <Folder Include="Unit 6\" />
+    <Folder Include="Unit 7\" />
+    <Folder Include="Unit 8\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Butterflies\bfly.gif" />
+    <Content Include="Images\Butterflies\bfly0.gif" />
+    <Content Include="Images\Butterflies\bfly1.gif" />
+    <Content Include="Images\Butterflies\bfly2.gif" />
+    <Content Include="Images\Butterflies\bfly3.gif" />
+    <Content Include="Images\Butterflies\bfly4.gif" />
+    <Content Include="Images\Butterflies\bfly5.gif" />
+    <Content Include="Images\Butterflies\bfly6.gif" />
+    <Content Include="Images\Butterflies\bfly7.gif" />
+    <Content Include="Images\Copter\copter0.gif" />
+    <Content Include="Images\Copter\copter1.gif" />
+    <Content Include="Images\Copter\copter2.gif" />
+    <Content Include="Images\Copter\copter3.gif" />
+    <Content Include="Images\Horse\horsey0.gif" />
+    <Content Include="Images\Horse\horsey1.gif" />
+    <Content Include="Images\Horse\horsey2.gif" />
+    <Content Include="Images\Horse\horsey3.gif" />
+    <Content Include="Images\Horse\horsey4.gif" />
+    <Content Include="Images\Horse\horsey5.gif" />
+    <Content Include="Images\Horse\horsey6.gif" />
+    <Content Include="Images\Horse\horsey7.gif" />
+    <Content Include="Images\Pigs\Pig0.gif" />
+    <Content Include="Images\Pigs\Pig1.gif" />
+    <Content Include="Images\Pigs\Pig2.gif" />
+    <Content Include="Images\Pigs\Pig3.gif" />
+    <Content Include="Images\Town and Sky\Sky1.jpg" />
+    <Content Include="Images\Town and Sky\Skyline1.jpg" />
+    <Content Include="Images\Town and Sky\Skyline2.jpg" />
+    <Content Include="Images\Town and Sky\Skyline3.jpg" />
+    <Content Include="Images\Town and Sky\Skyline4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
