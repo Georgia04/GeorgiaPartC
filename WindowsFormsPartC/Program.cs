@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsPartC.Unit5;
 
 namespace WindowsFormsPartC
 {
@@ -16,7 +17,11 @@ namespace WindowsFormsPartC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnimationForm());
+
+
+            Application.Run(new MenuForm());
+
         }
+       
     }
 }

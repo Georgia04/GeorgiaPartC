@@ -39,9 +39,9 @@ namespace WindowsFormsPartC.Unit5
         /// Picture Box when the form loads or when the animation character
         /// is changed.
         /// </summary>
-        
 
-        private void AnimationForm_Load(object sender, EventArgs e)
+
+        private void LoadImages(object sender, EventArgs e)
         {
             string baseFileName;
             if (horseRadio.Checked)
@@ -57,6 +57,26 @@ namespace WindowsFormsPartC.Unit5
                 string filename = baseFileName + imageNo + ".gif";
                 images[imageNo] = Image.FromFile(filename);
             }
+        }
+
+        private void quitForm_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void startAnimation_Click(object sender, EventArgs e)
+        {
+            animationTimer.Start();
+        }
+
+        private void stopAnimation_Click(object sender, EventArgs e)
+        {
+            animationTimer.Stop();
+        }
+
+        private void animationPictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.animationPictureBox = new System.Windows.Forms.PictureBox();
             this.startAnimation = new System.Windows.Forms.Button();
             this.stopAnimation = new System.Windows.Forms.Button();
-            this.quitAnimation = new System.Windows.Forms.Button();
+            this.quitForm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.butterflyRadio = new System.Windows.Forms.RadioButton();
             this.horseRadio = new System.Windows.Forms.RadioButton();
+            this.butterflyRadio = new System.Windows.Forms.RadioButton();
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.animationPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,9 +45,11 @@
             // 
             this.animationPictureBox.Location = new System.Drawing.Point(141, 96);
             this.animationPictureBox.Name = "animationPictureBox";
-            this.animationPictureBox.Size = new System.Drawing.Size(147, 137);
+            this.animationPictureBox.Size = new System.Drawing.Size(126, 116);
+            this.animationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.animationPictureBox.TabIndex = 0;
             this.animationPictureBox.TabStop = false;
+            this.animationPictureBox.Click += new System.EventHandler(this.animationPictureBox_Click);
             // 
             // startAnimation
             // 
@@ -56,6 +60,7 @@
             this.startAnimation.TabIndex = 1;
             this.startAnimation.Text = "Start";
             this.startAnimation.UseVisualStyleBackColor = true;
+            this.startAnimation.Click += new System.EventHandler(this.startAnimation_Click);
             // 
             // stopAnimation
             // 
@@ -66,16 +71,18 @@
             this.stopAnimation.TabIndex = 2;
             this.stopAnimation.Text = "Stop";
             this.stopAnimation.UseVisualStyleBackColor = true;
+            this.stopAnimation.Click += new System.EventHandler(this.stopAnimation_Click);
             // 
-            // quitAnimation
+            // quitForm
             // 
-            this.quitAnimation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.quitAnimation.Location = new System.Drawing.Point(481, 473);
-            this.quitAnimation.Name = "quitAnimation";
-            this.quitAnimation.Size = new System.Drawing.Size(106, 47);
-            this.quitAnimation.TabIndex = 3;
-            this.quitAnimation.Text = "Quit";
-            this.quitAnimation.UseVisualStyleBackColor = true;
+            this.quitForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.quitForm.Location = new System.Drawing.Point(481, 473);
+            this.quitForm.Name = "quitForm";
+            this.quitForm.Size = new System.Drawing.Size(106, 47);
+            this.quitForm.TabIndex = 3;
+            this.quitForm.Text = "Quit";
+            this.quitForm.UseVisualStyleBackColor = true;
+            this.quitForm.Click += new System.EventHandler(this.quitForm_Click);
             // 
             // panel1
             // 
@@ -83,30 +90,34 @@
             this.panel1.Controls.Add(this.butterflyRadio);
             this.panel1.Location = new System.Drawing.Point(677, 434);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(128, 86);
+            this.panel1.Size = new System.Drawing.Size(220, 104);
             this.panel1.TabIndex = 4;
-            // 
-            // butterflyRadio
-            // 
-            this.butterflyRadio.AutoSize = true;
-            this.butterflyRadio.Location = new System.Drawing.Point(15, 12);
-            this.butterflyRadio.Name = "butterflyRadio";
-            this.butterflyRadio.Size = new System.Drawing.Size(81, 21);
-            this.butterflyRadio.TabIndex = 0;
-            this.butterflyRadio.TabStop = true;
-            this.butterflyRadio.Text = "Butterfly";
-            this.butterflyRadio.UseVisualStyleBackColor = true;
             // 
             // horseRadio
             // 
             this.horseRadio.AutoSize = true;
+            this.horseRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.horseRadio.Location = new System.Drawing.Point(15, 53);
             this.horseRadio.Name = "horseRadio";
-            this.horseRadio.Size = new System.Drawing.Size(67, 21);
+            this.horseRadio.Size = new System.Drawing.Size(99, 33);
             this.horseRadio.TabIndex = 1;
             this.horseRadio.TabStop = true;
             this.horseRadio.Text = "Horse";
             this.horseRadio.UseVisualStyleBackColor = true;
+            this.horseRadio.CheckedChanged += new System.EventHandler(this.LoadImages);
+            // 
+            // butterflyRadio
+            // 
+            this.butterflyRadio.AutoSize = true;
+            this.butterflyRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.butterflyRadio.Location = new System.Drawing.Point(15, 12);
+            this.butterflyRadio.Name = "butterflyRadio";
+            this.butterflyRadio.Size = new System.Drawing.Size(120, 33);
+            this.butterflyRadio.TabIndex = 0;
+            this.butterflyRadio.TabStop = true;
+            this.butterflyRadio.Text = "Butterfly";
+            this.butterflyRadio.UseVisualStyleBackColor = true;
+            this.butterflyRadio.CheckedChanged += new System.EventHandler(this.LoadImages);
             // 
             // AnimationForm
             // 
@@ -114,17 +125,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 586);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.quitAnimation);
+            this.Controls.Add(this.quitForm);
             this.Controls.Add(this.stopAnimation);
             this.Controls.Add(this.startAnimation);
             this.Controls.Add(this.animationPictureBox);
             this.Name = "AnimationForm";
             this.Text = "Georgia\'s Animation";
-            this.Load += new System.EventHandler(this.AnimationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.animationPictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,10 +144,11 @@
         private System.Windows.Forms.PictureBox animationPictureBox;
         private System.Windows.Forms.Button startAnimation;
         private System.Windows.Forms.Button stopAnimation;
-        private System.Windows.Forms.Button quitAnimation;
+        private System.Windows.Forms.Button quitForm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton horseRadio;
         private System.Windows.Forms.RadioButton butterflyRadio;
+        private System.Windows.Forms.Timer animationTimer;
     }
 }
 

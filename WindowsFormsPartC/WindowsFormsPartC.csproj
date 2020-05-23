@@ -46,16 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimationForm.cs">
+    <Compile Include="Unit 5\Animation.cs" />
+    <Compile Include="Unit 5\AnimationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnimationForm.Designer.cs">
+    <Compile Include="Unit 5\AnimationForm.Designer.cs">
       <DependentUpon>AnimationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unit 5\FlyWithMeForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unit 5\FlyWithMeForm1.Designer.cs">
+      <DependentUpon>FlyWithMeForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unit 6\GraphicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unit 6\GraphicsForm.Designer.cs">
+      <DependentUpon>GraphicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unit 6\GraphicsForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unit 6\GraphicsForm2.Designer.cs">
+      <DependentUpon>GraphicsForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AnimationForm.resx">
+    <EmbeddedResource Include="Unit 5\AnimationForm.resx">
       <DependentUpon>AnimationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit 5\FlyWithMeForm1.resx">
+      <DependentUpon>FlyWithMeForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit 6\GraphicsForm.resx">
+      <DependentUpon>GraphicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit 6\GraphicsForm2.resx">
+      <DependentUpon>GraphicsForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,8 +118,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Unit 5\" />
-    <Folder Include="Unit 6\" />
     <Folder Include="Unit 7\" />
     <Folder Include="Unit 8\" />
   </ItemGroup>
@@ -111,11 +147,20 @@
     <Content Include="Images\Pigs\Pig1.gif" />
     <Content Include="Images\Pigs\Pig2.gif" />
     <Content Include="Images\Pigs\Pig3.gif" />
+    <Content Include="Images\Town and Sky\City1.wmf" />
+    <Content Include="Images\Town and Sky\City2.wmf" />
+    <Content Include="Images\Town and Sky\City3.wmf" />
+    <Content Include="Images\Town and Sky\City4.wmf" />
+    <Content Include="Images\Town and Sky\City5.wmf" />
+    <Content Include="Images\Town and Sky\City6.wmf" />
+    <Content Include="Images\Town and Sky\City7.wmf" />
+    <Content Include="Images\Town and Sky\City8.wmf" />
     <Content Include="Images\Town and Sky\Sky1.jpg" />
     <Content Include="Images\Town and Sky\Skyline1.jpg" />
     <Content Include="Images\Town and Sky\Skyline2.jpg" />
     <Content Include="Images\Town and Sky\Skyline3.jpg" />
     <Content Include="Images\Town and Sky\Skyline4.jpg" />
+    <None Include="Resources\City2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
