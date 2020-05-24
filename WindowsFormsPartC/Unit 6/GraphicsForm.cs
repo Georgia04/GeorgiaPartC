@@ -153,11 +153,12 @@ namespace WindowsFormsPartC.Unit6
 
             for (int i = 1; i <= 6; i++)
             {
-                // g.Clear(BackColor);
-                g.DrawString("Eric's Graphics Drawing", myFont, Brushes.Red, x, y);
+                g.Clear(BackColor);
+                g.DrawString("Georgia's Graphics Drawing", myFont, Brushes.Red, x, y);
 
                 System.Threading.Thread.Sleep(200);
                 y = y + fontSize;
+                g.Clear(BackColor);
             }
         }
 
@@ -207,7 +208,7 @@ namespace WindowsFormsPartC.Unit6
             g.FillPolygon(Brushes.Yellow, hexagon);
 
             Font myFont = new Font("Helvetica", 30);
-            g.DrawString("Eric's Hexagon", myFont, Brushes.Red, 120, 320);
+            g.DrawString("Georgia's Hexagon", myFont, Brushes.Red, 120, 320);
         }
 
         private void selectTasks(object sender, System.EventArgs e)
@@ -258,7 +259,7 @@ namespace WindowsFormsPartC.Unit6
             {
                 shape = Shapes.ELLIPSE;
             }
-            else if (key == "F")
+            else if (key == "E")
             {
                 shape = Shapes.FIGURE;
             }

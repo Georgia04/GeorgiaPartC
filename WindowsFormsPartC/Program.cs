@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsPartC.Unit5;
+using WindowsFormsPartC.Unit7;
 
 namespace WindowsFormsPartC
 {
@@ -20,6 +21,7 @@ namespace WindowsFormsPartC
 
 
             Application.Run(new MenuForm());
+            //Application.Run(new SketchForm());
 
         }
        

@@ -59,6 +59,32 @@ namespace WindowsFormsPartC.Unit5
             }
         }
 
+        /// <summary>
+        /// Change the image in the picture box to the next image
+        /// in the array with every animation timer click.  
+        /// Cycle continuously.
+        /// 
+        /// FIND THE DELIBERATE ERROR!!!
+        /// </summary>
+        private void UpdateImage(object sender, EventArgs e)
+        {
+            if (imageNo >= MAXN_IMAGES - 1)
+                imageNo = 0;
+            else
+                imageNo++;
+
+            animationPictureBox.Image = images[imageNo];
+
+            int x = generator.Next(20) - 10;
+            int y = generator.Next(20) - 10;
+
+            animationPictureBox.Top += y;
+            animationPictureBox.Left += x;
+
+            Refresh();
+        }
+
+
         private void quitForm_Click(object sender, EventArgs e)
         {
             Close();
@@ -74,9 +100,10 @@ namespace WindowsFormsPartC.Unit5
             animationTimer.Stop();
         }
 
-        private void animationPictureBox_Click(object sender, EventArgs e)
+        private void updateDateTimer_Tick(object sender, EventArgs e)
         {
-
+            dateLabel.Text = DateTime.Now.ToLongDateString();
+            timeLabel.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
