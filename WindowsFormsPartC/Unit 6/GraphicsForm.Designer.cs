@@ -45,7 +45,7 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Location = new System.Drawing.Point(12, 546);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 100);
+            this.panel1.Size = new System.Drawing.Size(394, 108);
             this.panel1.TabIndex = 0;
             // 
             // radioButton4
@@ -99,7 +99,7 @@
             // quitForm
             // 
             this.quitForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.quitForm.Location = new System.Drawing.Point(904, 594);
+            this.quitForm.Location = new System.Drawing.Point(1125, 615);
             this.quitForm.Name = "quitForm";
             this.quitForm.Size = new System.Drawing.Size(145, 52);
             this.quitForm.TabIndex = 1;
@@ -112,11 +112,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
-            this.ClientSize = new System.Drawing.Size(1131, 688);
+            this.ClientSize = new System.Drawing.Size(1344, 688);
             this.Controls.Add(this.quitForm);
             this.Controls.Add(this.panel1);
             this.Name = "GraphicsForm";
             this.Text = "GraphicsForm";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawGraphics);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

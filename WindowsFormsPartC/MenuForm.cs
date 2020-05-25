@@ -38,11 +38,17 @@ namespace WindowsFormsPartC
             else if (graphicsRadio.Checked)
             {
                 // Tasks 6.1 to 6.6
-                    GraphicsForm2 form = new GraphicsForm2();
+                    GraphicsForm form = new GraphicsForm();
                 form.Show();
             }
-        }
 
+            else if (bouncingBallRadio.Checked)
+            {
+                BouncingBallForm ballForm = new BouncingBallForm();
+                ballForm.Show();
+            }
+
+        }
         private void quitForm_Click(object sender, EventArgs e)
         {
             Close();

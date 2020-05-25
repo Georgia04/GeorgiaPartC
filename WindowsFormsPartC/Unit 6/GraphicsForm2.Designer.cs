@@ -34,10 +34,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 521);
+            this.ClientSize = new System.Drawing.Size(1162, 679);
             this.Name = "GraphicsForm2";
             this.Text = "GraphicsForm2";
-           
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawScreen);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.drawShape);
             this.ResumeLayout(false);
 
         }

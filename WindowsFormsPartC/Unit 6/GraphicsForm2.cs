@@ -14,8 +14,8 @@ namespace WindowsFormsPartC.Unit6
     {
         public const int BYTE = 256;
 
-        private int x;
-        private int y;
+        private int x;  // x axis
+        private int y;  // y axis
         private int w; // width
         private int h; // height
 
@@ -55,9 +55,9 @@ namespace WindowsFormsPartC.Unit6
 
         private void DrawScreen(object sender, PaintEventArgs e) 
         {
-            //drawStrings(e.Graphics);
-            //drawRectangles(e.Graphics, 600, 50);
-            //drawHexagon(e.Graphics, 20, 300);
+            drawStrings(e.Graphics);
+            drawRectangles(e.Graphics, 600, 50);
+            drawHexagon(e.Graphics, 20, 300);
 
             if (keyPressed) 
             {
@@ -84,7 +84,8 @@ namespace WindowsFormsPartC.Unit6
         }
 
         /// <summary>
-        /// Task 6.5
+        /// Task 6.5 uses the assigned position to create a circle
+        /// on the screen, the colour can also change.
         /// </summary>
         private void drawCircles(Graphics g)
         {
@@ -111,7 +112,8 @@ namespace WindowsFormsPartC.Unit6
         }
 
         /// <summary>
-        /// Task 6.3
+        /// Task 6.3 draws a hexagon and it places on the screen
+        /// in a green colour with a random outline
         /// </summary>
         private void drawHexagon(Graphics graphics, int x, int y)
         {
@@ -130,12 +132,13 @@ namespace WindowsFormsPartC.Unit6
             graphics.FillPolygon(Brushes.Green, hexagon);
 
             Font myFont = new Font("Helvetica", 30);
-            graphics.DrawString("Eric's Hexagon", myFont, Brushes.Red, x, y + 2 * size - 50);
+            graphics.DrawString("Georgia's Hexagon", myFont, Brushes.Red, x, y + 2 * size - 50);
 
         }
 
         /// <summary>
-        /// Task 6.2
+        /// Task 6.2 creates the rectangle on the side and shows
+        /// a hole in the middle for the yellow circle.
         /// </summary>
         private void drawRectangles(Graphics g, int x, int y)
         {
@@ -161,7 +164,8 @@ namespace WindowsFormsPartC.Unit6
         }
 
         /// <summary>
-        /// Task 6.1
+        /// Task 6.1 shows text on the screen above the
+        /// hexagon.
         /// </summary>
         private void drawStrings(Graphics g)
         {
@@ -173,8 +177,8 @@ namespace WindowsFormsPartC.Unit6
 
             for (int i = 1; i <= 6; i++)
             {
-                // g.Clear(BackColor);
-                g.DrawString("Eric's Graphics Drawing", myFont, Brushes.Red, x, y);
+                 g.Clear(BackColor);
+                g.DrawString("Georgia's Graphics Drawing", myFont, Brushes.Red, x, y);
 
                 System.Threading.Thread.Sleep(200);
                 y = y + fontSize;

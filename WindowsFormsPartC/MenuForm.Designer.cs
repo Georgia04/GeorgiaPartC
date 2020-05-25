@@ -35,6 +35,7 @@
             this.runForm = new System.Windows.Forms.Button();
             this.quitForm = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bouncingBallRadio = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,11 +107,24 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
+            // bouncingBallRadio
+            // 
+            this.bouncingBallRadio.AutoSize = true;
+            this.bouncingBallRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.bouncingBallRadio.Location = new System.Drawing.Point(36, 220);
+            this.bouncingBallRadio.Name = "bouncingBallRadio";
+            this.bouncingBallRadio.Size = new System.Drawing.Size(190, 33);
+            this.bouncingBallRadio.TabIndex = 7;
+            this.bouncingBallRadio.TabStop = true;
+            this.bouncingBallRadio.Text = "Bouncing Ball";
+            this.bouncingBallRadio.UseVisualStyleBackColor = true;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 645);
+            this.Controls.Add(this.bouncingBallRadio);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.quitForm);
             this.Controls.Add(this.runForm);
@@ -133,5 +147,6 @@
         private System.Windows.Forms.Button runForm;
         private System.Windows.Forms.Button quitForm;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RadioButton bouncingBallRadio;
     }
 }
