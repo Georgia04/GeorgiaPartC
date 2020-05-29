@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetForm.Designer.cs">
+      <DependentUpon>NetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unit 6\BouncingBallForm1.cs">
       <SubType>Form</SubType>
     </Compile>
