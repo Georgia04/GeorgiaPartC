@@ -39,10 +39,10 @@
             // 
             // ballPictureBox
             // 
-            this.ballPictureBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.ballPictureBox.Location = new System.Drawing.Point(27, 38);
+            this.ballPictureBox.BackColor = System.Drawing.Color.Cyan;
+            this.ballPictureBox.Location = new System.Drawing.Point(38, 49);
             this.ballPictureBox.Name = "ballPictureBox";
-            this.ballPictureBox.Size = new System.Drawing.Size(934, 445);
+            this.ballPictureBox.Size = new System.Drawing.Size(947, 415);
             this.ballPictureBox.TabIndex = 0;
             this.ballPictureBox.TabStop = false;
             this.ballPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.ballPicturePoint_Paint);
@@ -50,9 +50,9 @@
             // startButton
             // 
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.startButton.Location = new System.Drawing.Point(100, 526);
+            this.startButton.Location = new System.Drawing.Point(104, 490);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(131, 48);
+            this.startButton.Size = new System.Drawing.Size(121, 51);
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             // stopButton
             // 
             this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.stopButton.Location = new System.Drawing.Point(359, 526);
+            this.stopButton.Location = new System.Drawing.Point(356, 490);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(131, 48);
+            this.stopButton.Size = new System.Drawing.Size(121, 51);
             this.stopButton.TabIndex = 2;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // quitForm
             // 
             this.quitForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.quitForm.Location = new System.Drawing.Point(605, 526);
+            this.quitForm.Location = new System.Drawing.Point(604, 490);
             this.quitForm.Name = "quitForm";
-            this.quitForm.Size = new System.Drawing.Size(131, 48);
+            this.quitForm.Size = new System.Drawing.Size(121, 51);
             this.quitForm.TabIndex = 3;
             this.quitForm.Text = "Quit";
             this.quitForm.UseVisualStyleBackColor = true;
@@ -89,16 +89,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(1009, 592);
+            this.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.ClientSize = new System.Drawing.Size(1030, 562);
             this.Controls.Add(this.quitForm);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.ballPictureBox);
             this.Name = "BouncingBallForm";
-            this.Text = "BouncingBallForm";
+            this.Text = "Georgia\'s Bouncing Ball";
             this.Load += new System.EventHandler(this.BouncingBallForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ballPicturePoint_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.ballPictureBox)).EndInit();
             this.ResumeLayout(false);
 

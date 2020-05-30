@@ -20,24 +20,38 @@ namespace WindowsFormsPartC
 
         private Random generator = new Random();
 
-        private Ball redBall;
+        private Ball redball;
 
-        private Ball blueBall;
+        private Ball blueball;
 
         private int size = 40;
 
-        private Point getRandomPoint()
+        private Point getRandomPoint() 
         {
-            int x = generator.Next(ballPictureBox.Width);
-            int y = generator.Next(ballPictureBox.Height);
+            int X = generator.Next(ballPictureBox.Width);
+            int Y = generator.Next(ballPictureBox.Height);
 
-            Point randomRedPoint = new Point(x, y);
-            return randomRedPoint;
+            Point randomBluePoint = new Point(X, Y);
+            return randomBluePoint;
         }
-
         public BouncingBallForm()
         {
             InitializeComponent();
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            gameTimer.Enabled = true;
+        }
+
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            gameTimer.Enabled = false;
+        }
+
+        private void quitForm_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void ballPicturePoint_Paint(object sender, PaintEventArgs e)
@@ -45,13 +59,13 @@ namespace WindowsFormsPartC
             Graphics g = e.Graphics;
 
             SolidBrush brush = new SolidBrush(Color.Red);
-            redBall.Draw(e.Graphics, brush);
+            redball.Draw(e.Graphics, brush);
 
-            brush = new SolidBrush(Color.Green);
-            blueBall.Draw(e.Graphics, brush);
+            brush = new SolidBrush(Color.Blue);
+            blueball.Draw(e.Graphics, brush);
         }
 
-        private Color getRandomColor()
+        private Color getRandomColor() 
         {
             int red, green, blue;
 
@@ -62,7 +76,7 @@ namespace WindowsFormsPartC
             return Color.FromArgb(red, green, blue);
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) 
         {
             string input;
 
@@ -70,73 +84,57 @@ namespace WindowsFormsPartC
 
             if (input == "Up")
             {
-                redBall.Size = size + 20;
+                redball.Size = size + 20;
                 return true;
             }
-            if (input == "Down")
+            if (input == "Down") 
             {
-                redBall.Size = size - 20;
+                redball.Size = size - 20;
                 return true;
             }
-
-            if (keyData == Keys.C)
+            if (keyData == Keys.C) 
             {
                 ballPictureBox.BackColor = getRandomColor();
                 return true;
             }
 
-
-            // return true if key processed, otherwise false
+            //return true if key processed, otherwise false
             return false;
+
         }
 
         private void BouncingBallForm_Load(object sender, EventArgs e)
         {
             Rectangle boundary = new Rectangle(0, 0, ballPictureBox.Width, ballPictureBox.Height);
-            redBall = new Ball(boundary);
-            blueBall = new Ball(boundary);
+            redball = new Ball(boundary);
+            blueball = new Ball(boundary);
 
-            redBall.Position = getRandomPoint();
-            blueBall.Position = getRandomPoint();
+            redball.Position = getRandomPoint();
+            blueball.Position = getRandomPoint();
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            redBall.MoveBall();
-            blueBall.MoveBall();
+            redball.MoveBall();
+            blueball.MoveBall();
 
             Refresh();
-        }
-
-        private void stopButton_Click(object sender, EventArgs e)
-        {
-            gameTimer.Enabled = false;
-        }
-
-        private void startButton_Click(object sender, EventArgs e)
-        {
-            gameTimer.Enabled = true;
-        }
-
-        private void quitForm_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 
     public class Ball 
-    {
+    { 
         public int Size { get; set; }
         public Point Position { get; set; }
         public Point Speed { get; set; }
         public Rectangle Boundary { get; set; }
 
-        public Ball(Rectangle boundary)
+        public Ball(Rectangle boundary) 
         {
             Boundary = boundary;
 
             Size = 40;
-            Position = new Point(150, 50);
+            Position = new Point(170, 50);
             Speed = new Point(15, 15);
         }
 
@@ -157,13 +155,13 @@ namespace WindowsFormsPartC
             {
                 Speed = new Point(-Speed.X, Speed.Y);
             }
-            else if (position.Y + Size <= Boundary.Y)
+            else if (position.Y + Size <= Boundary.Y) 
             {
                 Speed = new Point(Speed.X, -Speed.Y);
             }
         }
 
-        public void Draw(Graphics g, SolidBrush brush)
+        public void Draw(Graphics g, SolidBrush brush) 
         {
             g.FillEllipse(brush, Position.X, Position.Y, Size, Size);
         }
