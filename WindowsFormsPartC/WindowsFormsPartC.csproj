@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BouncingBallForm.cs">
+    <Compile Include="Unit 6\BouncingBallForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BouncingBallForm.Designer.cs">
+    <Compile Include="Unit 6\BouncingBallForm.Designer.cs">
       <DependentUpon>BouncingBallForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Unit 7\SketchForm.cs">
@@ -91,7 +91,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BouncingBallForm.resx">
+    <EmbeddedResource Include="Unit 6\BouncingBallForm.resx">
       <DependentUpon>BouncingBallForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unit 7\SketchForm.resx">
