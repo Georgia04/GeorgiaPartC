@@ -18,7 +18,6 @@ namespace WindowsFormsPartC.Unit6
         LINE,
         RECTANGLE,
         SQUARE,
-
     }
 
     /// <summary>
@@ -50,7 +49,7 @@ namespace WindowsFormsPartC.Unit6
         /// refreshed.  e contains the Graphics object required for
         /// any drawing operation
         /// </summary>
-        private void DrawGraphics(object sender, PaintEventArgs e)
+        private void drawGraphics(object sender, PaintEventArgs e)
         {
             if (radioButton1.Checked)
             {
@@ -63,13 +62,14 @@ namespace WindowsFormsPartC.Unit6
             }
             else if (radioButton3.Checked)            // Task 6.4
             {
-                drawShape(e.Graphics);
+                DrawShape(e.Graphics);
             }
             else if (radioButton4.Checked)           // Task 6.5
             {
                 drawCircles(e.Graphics);
             }
         }
+
         /// <summary>
         /// This draws a circle in a random colour.
         /// </summary>
@@ -93,7 +93,6 @@ namespace WindowsFormsPartC.Unit6
                 size = size - 2 * decrease;
                 x = x + decrease;
                 y = y + decrease;
-
             }
         }
 
@@ -101,7 +100,7 @@ namespace WindowsFormsPartC.Unit6
         /// This is the Form Paint event handler
         /// </summary>
         /// <param name="g"></param>
-        public void drawShape(Graphics g) 
+        public void DrawShape(Graphics g) 
         {
             Color color = getRandomColor();
             Pen myPen = new Pen(color, 10);
@@ -139,7 +138,7 @@ namespace WindowsFormsPartC.Unit6
             }
         }
 
-        private void quitForm_Click(object sender, EventArgs e)
+        private void exitForm_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -160,7 +159,6 @@ namespace WindowsFormsPartC.Unit6
 
                 System.Threading.Thread.Sleep(200);
                 y = y + fontSize;
-                g.Clear(BackColor);
             }
         }
 
@@ -281,6 +279,5 @@ namespace WindowsFormsPartC.Unit6
 
             Refresh();
         }
-
     }
 }

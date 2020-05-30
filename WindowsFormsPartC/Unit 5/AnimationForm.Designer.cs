@@ -110,7 +110,7 @@
             this.horseRadio.TabStop = true;
             this.horseRadio.Text = "Horse";
             this.horseRadio.UseVisualStyleBackColor = true;
-            this.horseRadio.CheckedChanged += new System.EventHandler(this.LoadImages);
+            this.horseRadio.CheckedChanged += new System.EventHandler(this.loadImages);
             // 
             // butterflyRadio
             // 
@@ -123,11 +123,11 @@
             this.butterflyRadio.TabStop = true;
             this.butterflyRadio.Text = "Butterfly";
             this.butterflyRadio.UseVisualStyleBackColor = true;
-            this.butterflyRadio.CheckedChanged += new System.EventHandler(this.LoadImages);
+            this.butterflyRadio.CheckedChanged += new System.EventHandler(this.loadImages);
             // 
             // animationTimer
             // 
-            this.animationTimer.Tick += new System.EventHandler(this.UpdateImage);
+            this.animationTimer.Tick += new System.EventHandler(this.updateImage);
             // 
             // panel2
             // 

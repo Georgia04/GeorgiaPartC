@@ -21,13 +21,15 @@ namespace WindowsFormsPartC.Unit5
 
         public const string BACKGROUND_IMAGE_1 = "../../Images/Town and Sky/City1.wmf";
         public const string BACKGROUND_IMAGE_2 = "../../Images/Town and Sky/City2.wmf";
+        public const string BACKGROUND_IMAGE_3 = "../../Images/Town and Sky/City3.wmf";
 
         private string background = BACKGROUND_IMAGE_2;
+        private string background1 = BACKGROUND_IMAGE_1;
 
         private int horizontalSpeed = 10;
+        string baseFileName;
 
         private Animation animation = new Animation(4);
-        private Animation animation2 = new Animation(4);
 
         public FlyWithMeForm()
         {
@@ -44,14 +46,15 @@ namespace WindowsFormsPartC.Unit5
             {
                 animationTimer.Enabled = true;
             }
-
         }
 
-        private void updateCopter(object sender, EventArgs e) 
+        private void updateImage(object sender, EventArgs e) 
         {
-            copterPictureBox.Image = animation.GetNextImage();
+            //copterPictureBox.Image = animation.GetNextImage();
+            pigPictureBox.Image = animation.GetNextImage();
 
-            copterPictureBox.Left += horizontalSpeed;
+            //copterPictureBox.Left += horizontalSpeed;
+            pigPictureBox.Left += horizontalSpeed;
 
             // If the copter goes off the right hand side
 
@@ -62,29 +65,52 @@ namespace WindowsFormsPartC.Unit5
 
                 //Image image = Image.FromFile("../../Images/Town and Sky/City2.wmf");
 
-                if (background == BACKGROUND_IMAGE_1)
+                if (background1 == BACKGROUND_IMAGE_1)
                 {
                     background = BACKGROUND_IMAGE_2;
                 }
                 else
                 {
-                    background = BACKGROUND_IMAGE_1;
+                    background1 = BACKGROUND_IMAGE_1;
                 }
 
                 Bitmap bitmap = new Bitmap(background);
                 BackgroundImage = bitmap;
             }
+            if (pigPictureBox.Left > this.Width)
+            {
+                pigPictureBox.Top += VERTICAL_SPEED;
+                pigPictureBox.Left = -pigPictureBox.Width;
 
+                if (background1 == BACKGROUND_IMAGE_1)
+                {
+                    background = BACKGROUND_IMAGE_2;
+                }
+                else
+                {
+                    background1 = BACKGROUND_IMAGE_1;
+                }
+
+                Bitmap bitmap = new Bitmap(background1);
+                BackgroundImage = bitmap;
+            }
 
             if (copterPictureBox.Top > this.Height - copterPictureBox.Height)
             {
                 copterPictureBox.Top = VERTICAL_SPEED;
             }
+            if (pigPictureBox.Top > this.Height - pigPictureBox.Height)
+            {
+                pigPictureBox.Top = VERTICAL_SPEED;
+            }
         }
 
         private void loadImages(object sender, EventArgs e)
         {
-            string baseFileName = "../../Images/Copter/copter";
+            //baseFileName = "../../Images/Copter/copter";
+            //animation.LoadImages(baseFileName);
+
+             baseFileName = "../../Images/Pigs/pig";
             animation.LoadImages(baseFileName);
         }
 
@@ -102,63 +128,11 @@ namespace WindowsFormsPartC.Unit5
 
                 default: animationTimer.Interval = 80; break;
             }
-
-            switch(speed)
-            {
-                case 1: animationTimer2.Interval = 80; break;
-                case 2: animationTimer2.Interval = 60; break;
-                case 3: animationTimer2.Interval = 40; break;
-                case 4: animationTimer2.Interval = 20; break;
-                case 5: animationTimer2.Interval = 10; break;
-
-                default: animationTimer2.Interval = 80; break;
-            }
-        }
-
-        private void loadImages2(object sender, EventArgs e)
-        {
-            string baseFileName = "../../Images/Pigs/Pig";
-            animation.LoadImages(baseFileName);
-        }
-
-        private void updatePig(object sender, EventArgs e)
-        {
-            pigPictureBox.Image = animation2.GetNextImage();
-
-            pigPictureBox.Left += horizontalSpeed;
-
-            // If the pig goes off the right hand side
-
-            if (pigPictureBox.Left > this.Width)
-            {
-                pigPictureBox.Top += VERTICAL_SPEED;
-                pigPictureBox.Left = -pigPictureBox.Width;
-
-                //Image image = Image.FromFile("../../Images/Town and Sky/City2.wmf");
-
-                if (background == BACKGROUND_IMAGE_1)
-                {
-                    background = BACKGROUND_IMAGE_2;
-                }
-                else
-                {
-                    background = BACKGROUND_IMAGE_1;
-                }
-
-                Bitmap bitmap = new Bitmap(background);
-                BackgroundImage = bitmap;
-            }
-
-
-            if (pigPictureBox.Top > this.Height - pigPictureBox.Height)
-            {
-                pigPictureBox.Top = VERTICAL_SPEED;
-            }
         }
 
         private void quitForm_Click(object sender, EventArgs e)
         {
             Close();
-        }
+        }  
     }
 }

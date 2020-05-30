@@ -14,8 +14,8 @@ namespace WindowsFormsPartC.Unit6
     {
         public const int BYTE = 256;
 
-        private int x;  // x axis
-        private int y;  // y axis
+        private int x;  // 
+        private int y;  // 
         private int w; // width
         private int h; // height
 
@@ -39,7 +39,6 @@ namespace WindowsFormsPartC.Unit6
 
             Point p = new Point(x, y);
             return p;
-
         }
 
         private Color getRandomColor()
@@ -53,11 +52,17 @@ namespace WindowsFormsPartC.Unit6
             return Color.FromArgb(r, g, b);
         }
 
-        private void DrawScreen(object sender, PaintEventArgs e) 
+        /// <summary>
+        /// This method will draw  all
+        /// the graphics on the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void drawScreen(object sender, PaintEventArgs e) 
         {
-            drawStrings(e.Graphics);
-            drawRectangles(e.Graphics, 600, 50);
-            drawHexagon(e.Graphics, 20, 300);
+           drawStrings(e.Graphics);
+           drawRectangles(e.Graphics, 600, 50);
+           drawHexagon(e.Graphics, 20, 300);
 
             if (keyPressed) 
             {
@@ -107,7 +112,6 @@ namespace WindowsFormsPartC.Unit6
                 size = size - 2 * decrease;
                 x = x + decrease;
                 y = y + decrease;
-
             }
         }
 
@@ -133,7 +137,6 @@ namespace WindowsFormsPartC.Unit6
 
             Font myFont = new Font("Helvetica", 30);
             graphics.DrawString("Georgia's Hexagon", myFont, Brushes.Red, x, y + 2 * size - 50);
-
         }
 
         /// <summary>
@@ -143,7 +146,6 @@ namespace WindowsFormsPartC.Unit6
         private void drawRectangles(Graphics g, int x, int y)
         {
             w = 300; h = 200; int size = 20;
-
 
             g.DrawRectangle(myPen, x, y, w, h);
             g.FillRectangle(Brushes.Red, x, y, w, h);
@@ -161,6 +163,9 @@ namespace WindowsFormsPartC.Unit6
                 w = w - 2 * size;
                 h = h - 2 * size;
             }
+
+            Font myFont = new Font("Helvetica", 30);
+            g.DrawString("Georgia's Rectangles", myFont, Brushes.Red, x, y + 5 * size);
         }
 
         /// <summary>
@@ -177,13 +182,12 @@ namespace WindowsFormsPartC.Unit6
 
             for (int i = 1; i <= 6; i++)
             {
-                 g.Clear(BackColor);
+                g.Clear(BackColor);
                 g.DrawString("Georgia's Graphics Drawing", myFont, Brushes.Red, x, y);
 
                 System.Threading.Thread.Sleep(200);
                 y = y + fontSize;
             }
-
         }
 
         /// <summary>

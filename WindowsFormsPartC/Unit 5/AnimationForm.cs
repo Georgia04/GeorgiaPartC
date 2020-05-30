@@ -33,15 +33,13 @@ namespace WindowsFormsPartC.Unit5
             InitializeComponent();
         }
 
-
         /// <summary>
         /// Load MAXN_IMAGES from gif files and add them to the animation
         /// Picture Box when the form loads or when the animation character
         /// is changed.
         /// </summary>
 
-
-        private void LoadImages(object sender, EventArgs e)
+        private void loadImages(object sender, EventArgs e)
         {
             string baseFileName;
             if (horseRadio.Checked)
@@ -66,7 +64,7 @@ namespace WindowsFormsPartC.Unit5
         /// 
         /// FIND THE DELIBERATE ERROR!!!
         /// </summary>
-        private void UpdateImage(object sender, EventArgs e)
+        private void updateImage(object sender, EventArgs e)
         {
             if (imageNo >= MAXN_IMAGES - 1)
                 imageNo = 0;
@@ -83,7 +81,6 @@ namespace WindowsFormsPartC.Unit5
 
             Refresh();
         }
-
 
         private void quitForm_Click(object sender, EventArgs e)
         {

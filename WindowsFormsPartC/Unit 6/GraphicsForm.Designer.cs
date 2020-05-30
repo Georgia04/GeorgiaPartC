@@ -33,7 +33,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.quitForm = new System.Windows.Forms.Button();
+            this.exitForm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,16 +96,16 @@
             this.radioButton1.Text = "Tasks 6.1-6.2";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // quitForm
+            // exitForm
             // 
-            this.quitForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.quitForm.Location = new System.Drawing.Point(1125, 615);
-            this.quitForm.Name = "quitForm";
-            this.quitForm.Size = new System.Drawing.Size(145, 52);
-            this.quitForm.TabIndex = 1;
-            this.quitForm.Text = "Quit";
-            this.quitForm.UseVisualStyleBackColor = true;
-            this.quitForm.Click += new System.EventHandler(this.quitForm_Click);
+            this.exitForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.exitForm.Location = new System.Drawing.Point(1125, 615);
+            this.exitForm.Name = "exitForm";
+            this.exitForm.Size = new System.Drawing.Size(145, 52);
+            this.exitForm.TabIndex = 1;
+            this.exitForm.Text = "Quit";
+            this.exitForm.UseVisualStyleBackColor = true;
+            this.exitForm.Click += new System.EventHandler(this.exitForm_Click);
             // 
             // GraphicsForm
             // 
@@ -113,11 +113,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(1344, 688);
-            this.Controls.Add(this.quitForm);
+            this.Controls.Add(this.exitForm);
             this.Controls.Add(this.panel1);
             this.Name = "GraphicsForm";
-            this.Text = "GraphicsForm";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawGraphics);
+            this.Text = "Graphics Form";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.drawGraphics);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,6 +131,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button quitForm;
+        private System.Windows.Forms.Button exitForm;
     }
 }

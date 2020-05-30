@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsPartC
 {
+    /// <summary>
+    /// This form has a ball bounce around the
+    /// screen when the start button is clicked. The
+    /// background colour and size of ball can be 
+    /// changed.
+    /// Author: Georgia Gkegka
+    /// </summary>
     public partial class BouncingBallForm : Form
     {
-        private int X = 150;
+        private int x = 150;
 
-        private int Y = 100;
+        private int y = 100;
 
         public const int Byte = 190;
 
@@ -76,6 +83,11 @@ namespace WindowsFormsPartC
             return Color.FromArgb(red, green, blue);
         }
 
+        /// <summary>
+        /// When you press on fo the buttons the ball
+        /// can change size
+        /// Author: Georgia Gkegka
+        /// </summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData) 
         {
             string input;
@@ -100,7 +112,6 @@ namespace WindowsFormsPartC
 
             //return true if key processed, otherwise false
             return false;
-
         }
 
         private void BouncingBallForm_Load(object sender, EventArgs e)
@@ -124,6 +135,11 @@ namespace WindowsFormsPartC
 
     public class Ball 
     { 
+        /// <summary>
+        /// This method can manage the speed of movement 
+        /// and boundary of movement of the ball
+        ///  Author: Georgia Gkegka
+        /// </summary>
         public int Size { get; set; }
         public Point Position { get; set; }
         public Point Speed { get; set; }
@@ -161,6 +177,10 @@ namespace WindowsFormsPartC
             }
         }
 
+        /// <summary>
+        /// This method can draw the posisiton of the ball
+        /// Author: Georgia Gkegka
+        /// </summary>
         public void Draw(Graphics g, SolidBrush brush) 
         {
             g.FillEllipse(brush, Position.X, Position.Y, Size, Size);

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlyWithMeForm));
             this.copterPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.stopRadio = new System.Windows.Forms.RadioButton();
@@ -39,7 +38,6 @@
             this.quitForm = new System.Windows.Forms.Button();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.pigPictureBox = new System.Windows.Forms.PictureBox();
-            this.animationTimer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.copterPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.speedNumericUpDown)).BeginInit();
@@ -48,15 +46,14 @@
             // 
             // copterPictureBox
             // 
-            this.copterPictureBox.BackColor = System.Drawing.Color.White;
-            this.copterPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("copterPictureBox.BackgroundImage")));
-            this.copterPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.copterPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.copterPictureBox.InitialImage = null;
             this.copterPictureBox.Location = new System.Drawing.Point(288, 56);
             this.copterPictureBox.Name = "copterPictureBox";
             this.copterPictureBox.Size = new System.Drawing.Size(112, 104);
             this.copterPictureBox.TabIndex = 0;
             this.copterPictureBox.TabStop = false;
+            
             // 
             // panel1
             // 
@@ -142,22 +139,18 @@
             // animationTimer
             // 
             this.animationTimer.Enabled = true;
-            this.animationTimer.Tick += new System.EventHandler(this.updateCopter);
+            this.animationTimer.Tick += new System.EventHandler(this.updateImage);
             // 
             // pigPictureBox
             // 
-            this.pigPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pigPictureBox.BackgroundImage")));
+            this.pigPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.pigPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pigPictureBox.Location = new System.Drawing.Point(619, 76);
             this.pigPictureBox.Name = "pigPictureBox";
             this.pigPictureBox.Size = new System.Drawing.Size(112, 104);
             this.pigPictureBox.TabIndex = 5;
             this.pigPictureBox.TabStop = false;
-            // 
-            // animationTimer2
-            // 
-            this.animationTimer2.Enabled = true;
-            this.animationTimer2.Tick += new System.EventHandler(this.updatePig);
+
             // 
             // FlyWithMeForm
             // 
@@ -174,8 +167,8 @@
             this.Controls.Add(this.copterPictureBox);
             this.DoubleBuffered = true;
             this.Name = "FlyWithMeForm";
-            this.Text = "FlyWithMeForm";
-            this.Load += new System.EventHandler(this.changeSpeed);
+            this.Text = "Georgia\'s Fly With Me Form";
+            this.Load += new System.EventHandler(this.loadImages);
             ((System.ComponentModel.ISupportInitialize)(this.copterPictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -194,7 +187,6 @@
         private System.Windows.Forms.Button quitForm;
         private System.Windows.Forms.Timer animationTimer;
         private System.Windows.Forms.PictureBox pigPictureBox;
-        private System.Windows.Forms.Timer animationTimer2;
         private System.Windows.Forms.PictureBox copterPictureBox;
     }
 }

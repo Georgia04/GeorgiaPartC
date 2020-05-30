@@ -33,7 +33,7 @@
             // 
             // sketchPanel
             // 
-            this.sketchPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sketchPanel.BackColor = System.Drawing.SystemColors.Info;
             this.sketchPanel.Location = new System.Drawing.Point(64, 66);
             this.sketchPanel.Name = "sketchPanel";
             this.sketchPanel.Size = new System.Drawing.Size(975, 539);
@@ -44,12 +44,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(1107, 705);
             this.Controls.Add(this.sketchPanel);
             this.Name = "SketchForm";
-            this.Text = "Sketch Form";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Georgia\'s Etch a Sketch Form";
             this.Load += new System.EventHandler(this.SketchForm_Load);
             this.ResumeLayout(false);
 
