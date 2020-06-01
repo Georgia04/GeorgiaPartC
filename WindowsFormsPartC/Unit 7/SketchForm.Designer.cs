@@ -47,9 +47,11 @@
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(1107, 705);
             this.Controls.Add(this.sketchPanel);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "SketchForm";
             this.Text = "Georgia\'s Etch a Sketch Form";
             this.Load += new System.EventHandler(this.SketchForm_Load);
+           
             this.ResumeLayout(false);
 
         }

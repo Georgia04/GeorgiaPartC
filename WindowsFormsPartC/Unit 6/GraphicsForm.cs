@@ -210,7 +210,7 @@ namespace WindowsFormsPartC.Unit6
             };
 
             g.DrawPolygon(myPen, hexagon);
-            g.FillPolygon(Brushes.Yellow, hexagon);
+            g.FillPolygon(Brushes.Red, hexagon);
 
             Font myFont = new Font("Helvetica", 30);
             g.DrawString("Georgia's Hexagon", myFont, Brushes.Red, 120, 320);
